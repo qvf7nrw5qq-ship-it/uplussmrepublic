@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LG U+ 프리미엄 모바일 센터</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+
+body{
+  margin:0;
+  font-family:'Pretendard',sans-serif;
+  background:#f6f7fb;
+  color:#111;
+}
+
+header{
+  background:linear-gradient(135deg,#ff0066,#6a11cb);
+  color:white;
+  padding:90px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+header p{
+  opacity:.9;
+  margin-bottom:30px;
+}
+
+.main-btn{
+  padding:15px 30px;
+  background:white;
+  color:#6a11cb;
+  font-weight:700;
+  border-radius:50px;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.main-btn:hover{
+  transform:scale(1.08);
+}
+
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:70px 20px;
+}
+
+.title{
+  text-align:center;
+  font-size:28px;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.05);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card h3{
+  color:#6a11cb;
+}
+
+.price-banner{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.price-banner h2{
+  font-size:30px;
+  margin-bottom:15px;
+}
+
+.device{
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.device h4{
+  margin:10px 0;
+}
+
+.zero{
+  color:#ff0066;
+  font-size:22px;
+  font-weight:800;
+}
+
+.form-section{
+  background:white;
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+input{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+button.submit{
+  width:100%;
+  padding:15px;
+  border:none;
+  background:#6a11cb;
+  color:white;
+  font-size:16px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.fixed-kakao{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#fee500;
+  padding:15px 20px;
+  border-radius:50px;
+  font-weight:700;
+  text-decoration:none;
+  color:#000;
+  box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  font-size:13px;
+  background:#eee;
+  margin-top:50px;
+}
+
+@media(max-width:600px){
+  header h1{font-size:26px;}
+  .title{font-size:22px;}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LG U+ 프리미엄 공식 파트너</h1>
+  <p>최신 스마트폰 · 기업전담 · 가족결합 특화 컨설팅</p>
+  <a href="#consult" class="main-btn">지금 바로 혜택 확인</a>
+</header>
+
+<section class="section">
+  <div class="title">왜 선택해야 할까요?</div>
+  <div class="grid">
+    <div class="card">
+      <h3>최대 지원 설계</h3>
+      <p>조건 분석 후 가장 유리한 조합으로 설계</p>
+    </div>
+    <div class="card">
+      <h3>당일 개통 가능</h3>
+      <p>대기 없이 빠르게 진행</p>
+    </div>
+    <div class="card">
+      <h3>외국인 · 법인 전문</h3>
+      <p>복잡한 절차도 원스톱 처리</p>
+    </div>
+  </div>
+</section>
+
+<section class="price-banner">
+  <h2>실구매가 0원 가능 모델 다수</h2>
+  <p>재고 소진 시 조기 종료</p>
+</section>
+
+<section class="section">
+  <div class="title">인기 모델 안내</div>
+  <div class="grid">
+    <div class="device">
+      <h4>Galaxy Series</h4>
+      <div class="zero">0원 가능</div>
+      <p>조건 충족 시</p>
+    </div>
+    <div class="device">
+      <h4>iPhone Series</h4>
+      <div class="zero">특가 진행중</div>
+      <p>한정 수량</p>
+    </div>
+    <div class="device">
+      <h4>키즈 · 시니어폰</h4>
+      <div class="zero">추가 혜택</div>
+      <p>요금제 최적 설계</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="consult">
+  <div class="form-section">
+    <div class="title">무료 상담 신청</div>
+    <form action="https://formspree.io/f/yourcode" method="POST">
+      <input type="text" name="name" placeholder="이름" required>
+      <input type="tel" name="phone" placeholder="연락처" required>
+      <button type="submit" class="submit">상담 요청하기</button>
+    </form>
+  </div>
+</section>
+
+<a href="https://open.kakao.com/o/yourlink" class="fixed-kakao">
+  💬 카카오톡 상담
+</a>
+
+<footer>
+  © 2026 LG U+ Premium Partner | 모든 상담은 무료입니다.
+</footer>
+
+</body>
+</html>
