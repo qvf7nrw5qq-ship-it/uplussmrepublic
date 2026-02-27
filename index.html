@@ -5,8 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LG U+ 프리미엄 모바일 센터</title>
 <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
 
+  <style>
+.kakao-btn{
+  display:block;
+  width:100%;
+  margin:15px 0;
+  padding:16px;
+  background:#FEE500;
+  color:#000;
+  font-weight:700;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+.call-btn{
+  display:block;
+  width:100%;
+  margin-bottom:20px;
+  padding:16px;
+  background:#111;
+  color:#fff;
+  font-weight:700;
+  text-align:center;
+  border-radius:8px;
+  text-decoration:none;
+}
 body{
   margin:0;
   font-family:'Pretendard',sans-serif;
@@ -242,11 +267,19 @@ footer{
 <section class="section" id="consult">
   <div class="form-section">
     <div class="title">무료 상담 신청</div>
-    <form action="https://formspree.io/f/yourcode" method="POST">
-      <input type="text" name="name" placeholder="이름" required>
-      <input type="tel" name="phone" placeholder="연락처" required>
-      <button type="submit" class="submit">상담 요청하기</button>
-    </form>
+<a href="http://pf.kakao.com/_xlxfehX/chat" target="_blank" class="kakao-btn">
+  카카오톡 상담하기
+</a>
+
+<a href="tel:01045028318" class="call-btn">
+  📞 전화 바로 걸기
+</a>
+
+<form>
+    <input type="text" placeholder="이름" required>
+    <input type="tel" placeholder="연락처" required>
+    <button type="submit" class="submit">상담 요청하기</button>
+</form>
   </div>
 </section>
 
