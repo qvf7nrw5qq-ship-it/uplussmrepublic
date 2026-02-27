@@ -15,13 +15,30 @@ body{
 }
 
 header{
-  background:url('262.jpg') center/cover no-repeat;
+  background:url('262.jpg') center center / cover no-repeat;
+  height:520px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
   color:white;
-  padding:120px 20px;
-  text-align:center;
   position:relative;
 }
+header::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.45);
+}
 
+header h1,
+header p,
+header a{
+  position:relative;
+}
 header h1{
   font-size:34px;
   margin-bottom:10px;
@@ -33,13 +50,18 @@ header p{
 }
 
 .main-btn{
-  padding:15px 30px;
-  background:white;
-  color:#6a11cb;
+  padding:18px 40px;
+  background:#ff007a;
+  color:white;
   font-weight:700;
   border-radius:50px;
   text-decoration:none;
   transition:.3s;
+  box-shadow:0 10px 30px rgba(255,0,122,.4);
+}
+
+.main-btn:hover{
+  transform:scale(1.05);
 }
 
 .main-btn:hover{
