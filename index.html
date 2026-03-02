@@ -640,6 +640,30 @@ a.kakao-btn{
   .products#models .product-card:nth-child(4),
   .products#models .product-card:nth-child(5){ grid-column: auto; }
 }
+    /* ✅ 베스트상품(5개) 아래줄 2개 가운데 정렬 + 카드 크기 통일 */
+.products#models .product-grid{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;  /* 줄마다 가운데 */
+  gap: 30px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.products#models .product-card{
+  flex: 0 0 320px !important;   /* 카드 폭 고정(통일) */
+  max-width: 320px !important;
+  height: 240px !important;     /* 카드 높이 통일(원하면 숫자만 조절) */
+}
+
+/* 모바일은 1줄씩 */
+@media (max-width: 900px){
+  .products#models .product-card{
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -680,8 +704,8 @@ a.kakao-btn{
   <div class="product-grid">
    <article class="product-card">
   <div class="product-body">
-    <div class="product-name">쓰던폰 그대로</div>
-    <p class="product-desc">통신사 변경해도 10만원 지급</p>
+    <div class="product-name">유심 단독 변경</div>
+    <p class="product-desc">쓰던폰 그대로 통신사 변경해도 10만원 지급</p>
     <div class="product-actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
       <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
@@ -692,7 +716,7 @@ a.kakao-btn{
 <article class="product-card">
   <div class="product-body">
     <div class="badges">
-      <span class="badge" style="background:#ff2d8d;color:#fff;">256GB→512GB 업그레이드</span>
+      <span class="badge" style="background:#ff2d8d;color:#fff;">#[256GB→512GB 업그레이드]</span>
     </div>
     <div class="product-name">갤럭시 S26 시리즈</div>
     <p class="product-desc">사전예약</p>
