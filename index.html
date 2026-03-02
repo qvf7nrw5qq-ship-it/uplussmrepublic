@@ -469,7 +469,117 @@ a.kakao-btn{
   border-radius: 14px !important;
   font-weight: 900 !important;
   letter-spacing: -0.01em;
-}   
+} 
+  /* ===== 상품 카드 스타일 ===== */
+
+.products {
+  padding: 80px 20px;
+  background: #f8f9fb;
+}
+
+.products-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+}
+
+.product-thumb img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-right: 6px;
+  color: #fff;
+}
+
+.badge.hot {
+  background: #ff4d6d;
+}
+
+.badge.sale {
+  background: #ffb703;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.price-row {
+  margin-top: 10px;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.price-now {
+  color: #ff2e63;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.product-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+    /* 강제 적용 버전 */
+
+.products {
+  padding: 80px 20px !important;
+  background: #f8f9fb !important;
+}
+
+.products .product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 30px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.products .product-card {
+  background: #fff !important;
+  border-radius: 18px !important;
+  padding: 25px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important;
+  transition: all 0.3s ease !important;
+}
+
+.products .product-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15) !important;
+}
 </style>
 </head>
 <body>
@@ -530,7 +640,81 @@ a.kakao-btn{
         </div>
       </div>
     </article>
+  <section class="products" id="models">
+  <div class="products-title">베스트 상품</div>
 
+  <div class="product-grid">
+    <article class="product-card">
+      <div class="product-thumb">
+        <img src="iphone.png" alt="iPhone">
+      </div>
+      <div class="product-body">
+        <div class="badges">
+          <span class="badge hot">HOT</span>
+          <span class="badge sale">SALE</span>
+        </div>
+        <div class="product-name">iPhone 17 Pro</div>
+        <p class="product-desc">재고 확인 후 빠른 안내</p>
+
+        <div class="price-row">
+          <span class="price-old">1,550,000원</span>
+          <span class="price-now">실구매가 0원</span>
+        </div>
+
+        <div class="product-actions">
+          <a href="#consult" class="btn btn-primary">상담 신청</a>
+          <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-thumb">
+        <img src="galaxy.png" alt="Galaxy">
+      </div>
+      <div class="product-body">
+        <div class="badges">
+          <span class="badge new">NEW</span>
+        </div>
+        <div class="product-name">Galaxy S26 Ultra</div>
+        <p class="product-desc">당일 개통 가능</p>
+
+        <div class="price-row">
+          <span class="price-old">1,690,000원</span>
+          <span class="price-now">실구매가 0원</span>
+        </div>
+
+        <div class="product-actions">
+          <a href="#consult" class="btn btn-primary">상담 신청</a>
+          <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card">
+      <div class="product-thumb">
+        <img src="kids.png" alt="Kids Phone">
+      </div>
+      <div class="product-body">
+        <div class="badges">
+          <span class="badge sale">혜택</span>
+        </div>
+        <div class="product-name">키즈 · 시니어폰</div>
+        <p class="product-desc">요금제 최적 설계</p>
+
+        <div class="price-row">
+          <span class="price-old">조건별 상이</span>
+          <span class="price-now">추가 혜택</span>
+        </div>
+
+        <div class="product-actions">
+          <a href="#consult" class="btn btn-primary">상담 신청</a>
+          <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
     <article class="product-card">
       <div class="product-thumb">
         <img src="galaxy.png" alt="Galaxy">
