@@ -21,17 +21,26 @@
 }
 
 .call-btn{
-  display:block;
-  width:100%;
-  margin-bottom:20px;
-  padding:16px;
-  background:#111;
-  color:#fff;
-  font-weight:700;
-  text-align:center;
-  border-radius:8px;
-  text-decoration:none;
+   display:block;
+   width:100%;
+   margin:15px 0;   
+   padding:16px;
+   background:#111;
+   color:#fff;
+   font-weight:700;
+   text-align:center;
+   border-radius:8px;
+   text-decoration:none;
 }
+   /* 버튼 크기 통일 */
+.kakao-btn,
+.call-btn {
+  height:56px;
+  line-height:56px;
+  padding:0;          /* 기존 padding 제거 */
+  border-radius:14px; /* 둥글기 통일 */
+  font-size:16px;
+} 
 body{
   margin:0;
   font-family:'Pretendard',sans-serif;
@@ -355,9 +364,9 @@ footer{
 
 <form>
 
-  <a href="http://pf.kakao.com/_xlxfehX/chat" target="_blank" class="kakao-btn">
-    카카오톡 상담하기
-  </a>
+  <a href="http://pf.kakao.com/_xlxfehX/chat" target="_blank" class="kakao-btn btn-common">
+  카카오톡 상담하기
+</a>
 
 <button type="button" class="call-btn" onclick="window.openCallModal()">
   📞 지역별 전화 연결
