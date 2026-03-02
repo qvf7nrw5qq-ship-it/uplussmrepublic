@@ -359,7 +359,7 @@ footer{
     카카오톡 상담하기
   </a>
 
-<button type="button" class="call-btn" onclick="openCallModal()">
+<button type="button" class="call-btn" onclick="window.openCallModal()">
   📞 지역별 전화 연결
 </button>
  
@@ -403,16 +403,20 @@ footer{
 <script>
 function openCallModal() {
   const m = document.getElementById("callModal");
+  m.style.display = "block";   // 👈 이 줄 추가
   m.classList.add("is-open");
   document.body.classList.add("no-scroll");
 }
+
 function closeCallModal() {
   const m = document.getElementById("callModal");
   m.classList.remove("is-open");
   document.body.classList.remove("no-scroll");
+
+  setTimeout(function(){
+    m.style.display = "none";  // 👈 닫힐 때 다시 숨김
+  }, 200);
 }
 </script>
-</body>
-</html>
 </body>
 </html>
