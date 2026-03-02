@@ -243,7 +243,48 @@ footer{
   header h1{font-size:26px;}
   .title{font-size:22px;}
 }
+/* Call Modal */
+.modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
 
+.modal-backdrop.is-open{
+  display: flex;
+}
+
+.modal-sheet{
+  width: 100%;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+
+.modal-header{
+  display:flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.modal-btn{
+  display:block;
+  padding:14px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:700;
+  text-align:center;
+  background:#111;
+  color:#fff;
+  margin-bottom:10px;
+}
 </style>
 </head>
 <body>
@@ -323,9 +364,10 @@ footer{
     카카오톡 상담하기
   </a>
 
-  <a href="tel:01045028318" class="call-btn">
-    📞 전화 바로 걸기
-  </a>
+ <button type="button" class="call-btn" id="openCallModal">
+  📞 지역별 전화 연결
+</button>
+ 
 
   <input type="text" placeholder="이름" required>
   <input type="tel" placeholder="연락처" required>
@@ -342,6 +384,15 @@ footer{
 <footer>
   © 2026 LG U+ Premium Partner | 모든 상담은 무료입니다.
 </footer>
+<div class="modal-backdrop" id="callModal">
+  ...
+</div>
 
+<script>
+  ...
+</script>
+
+</body>
+</html>
 </body>
 </html>
