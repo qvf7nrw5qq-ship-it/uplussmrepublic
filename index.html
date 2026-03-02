@@ -632,8 +632,6 @@ a.kakao-btn{
     .products#models .product-grid{
   grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
 }
-.products#models .product-card:nth-child(4){ grid-column: 1 / 2; }
-.products#models .product-card:nth-child(5){ grid-column: 2 / 4; }
 
 
  /* ✅ 베스트상품: 3개/2개 고정 + 아래 2개 가운데 + 카드 크기 동일 */
@@ -656,6 +654,26 @@ a.kakao-btn{
   color: #E6007E;
   font-weight: 800;
   font-size: 20px;
+}
+    /* ✅ 베스트상품 6개: 무조건 3개/3개로 고정 */
+.products#models .product-grid{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 30px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+/* ✅ 카드가 2칸 먹는 거 방지 (무조건 1칸) */
+.products#models .product-card{
+  grid-column: span 1 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* ✅ 모바일에서는 1줄 */
+@media (max-width: 900px){
+  .products#models .product-grid{ grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
