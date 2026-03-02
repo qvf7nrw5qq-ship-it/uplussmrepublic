@@ -640,29 +640,43 @@ a.kakao-btn{
   .products#models .product-card:nth-child(4),
   .products#models .product-card:nth-child(5){ grid-column: auto; }
 }
-    /* ✅ 베스트상품(5개) 아래줄 2개 가운데 정렬 + 카드 크기 통일 */
+ /* ✅ 베스트상품: 3개/2개 고정 + 아래 2개 가운데 + 카드 크기 동일 */
 .products#models .product-grid{
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;  /* 줄마다 가운데 */
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 30px !important;
   max-width: 1200px !important;
   margin: 0 auto !important;
 }
 
+/* 카드 크기 통일(원하면 숫자만 조절) */
 .products#models .product-card{
-  flex: 0 0 320px !important;   /* 카드 폭 고정(통일) */
-  max-width: 320px !important;
-  height: 240px !important;     /* 카드 높이 통일(원하면 숫자만 조절) */
+  height: 240px !important;
 }
 
-/* 모바일은 1줄씩 */
+/* 4번째(무너폰2) -> 2열로 보내서 가운데 정렬 */
+.products#models .product-card:nth-child(4){
+  grid-column: 2 !important;
+}
+
+/* 5번째(버디4) -> 3열 */
+.products#models .product-card:nth-child(5){
+  grid-column: 3 !important;
+}
+
+/* 모바일은 1줄 */
 @media (max-width: 900px){
+  .products#models .product-grid{
+    grid-template-columns: 1fr !important;
+  }
+  .products#models .product-card:nth-child(4),
+  .products#models .product-card:nth-child(5){
+    grid-column: auto !important;
+  }
   .products#models .product-card{
-    flex: 1 1 100% !important;
-    max-width: 100% !important;
     height: auto !important;
   }
+}  
 }
 </style>
 </head>
