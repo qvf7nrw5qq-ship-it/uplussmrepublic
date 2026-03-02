@@ -243,48 +243,43 @@ footer{
   header h1{font-size:26px;}
   .title{font-size:22px;}
 }
-/* Call Modal */
-.modal-backdrop{
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-  display: none;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 9999;
-  padding: 16px;
+/* iOS ActionSheet */
+.ios-sheet{position:fixed;inset:0;z-index:9999;display:none}
+.ios-sheet.is-open{display:block}
+.ios-dim{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.ios-panel{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:10px 10px 20px;
+  transform:translateY(110%);
+  transition:transform .22s ease;
 }
-
-.modal-backdrop.is-open{
-  display: flex;
-}
-
-.modal-sheet{
-  width: 100%;
-  max-width: 520px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-  overflow: hidden;
-}
-
-.modal-header{
-  display:flex;
-  justify-content: space-between;
-  padding: 18px;
-}
-
-.modal-btn{
-  display:block;
-  padding:14px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:700;
+.ios-sheet.is-open .ios-panel{transform:translateY(0)}
+.ios-title{
+  background:rgba(255,255,255,.92);
+  border-radius:14px;
+  padding:14px 12px;
   text-align:center;
-  background:#111;
-  color:#fff;
-  margin-bottom:10px;
+  backdrop-filter: blur(10px);
 }
+.ios-title-main{font-weight:700;font-size:16px}
+.ios-title-sub{margin-top:4px;font-size:12px;opacity:.6}
+.ios-group{margin-top:10px}
+.ios-group > .ios-btn{
+  display:block;width:100%;
+  background:rgba(255,255,255,.92);
+  border:none;
+  border-radius:14px;
+  padding:16px 12px;
+  text-align:center;
+  font-weight:700;
+  text-decoration:none;
+  color:#007aff;
+  backdrop-filter: blur(10px);
+}
+.ios-group > .ios-btn + .ios-btn{margin-top:8px}
+.ios-cancel{color:#ff3b30}
+.no-scroll{overflow:hidden}
+
 </style>
 </head>
 <body>
@@ -364,7 +359,7 @@ footer{
     카카오톡 상담하기
   </a>
 
- <button type="button" class="call-btn" id="openCallModal">
+<button type="button" class="call-btn" onclick="openCallModal()">
   📞 지역별 전화 연결
 </button>
  
@@ -384,14 +379,39 @@ footer{
 <footer>
   © 2026 LG U+ Premium Partner | 모든 상담은 무료입니다.
 </footer>
-<div class="modal-backdrop" id="callModal">
-  ...
+<div id="callModal" class="ios-sheet" aria-hidden="true">
+  <div class="ios-dim" onclick="closeCallModal()"></div>
+
+  <div class="ios-panel" role="dialog" aria-modal="true">
+    <div class="ios-title">
+      <div class="ios-title-main">지역을 선택하세요</div>
+      <div class="ios-title-sub">원하는 매장으로 바로 연결됩니다</div>
+    </div>
+
+    <div class="ios-group">
+      <a class="ios-btn" href="tel:0314189241">안산 연결</a>
+      <a class="ios-btn" href="tel:0313563774">화성 연결</a>
+      <a class="ios-btn" href="tel:0314977148">시흥 연결</a>
+    </div>
+
+    <div class="ios-group">
+      <button class="ios-btn ios-cancel" type="button" onclick="closeCallModal()">취소</button>
+    </div>
+  </div>
 </div>
 
 <script>
-  ...
+function openCallModal() {
+  const m = document.getElementById("callModal");
+  m.classList.add("is-open");
+  document.body.classList.add("no-scroll");
+}
+function closeCallModal() {
+  const m = document.getElementById("callModal");
+  m.classList.remove("is-open");
+  document.body.classList.remove("no-scroll");
+}
 </script>
-
 </body>
 </html>
 </body>
