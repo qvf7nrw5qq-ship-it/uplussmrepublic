@@ -992,6 +992,25 @@ footer, .section, .container {
   height: auto !important;
   overflow: visible !important;
 }
+ /* 모바일에서는 사진영역 높이 고정 풀기 */
+@media (max-width: 768px){
+  .product-thumb{
+    height: auto !important;
+    padding: 12px 0; /* 너무 붙으면 여백 */
+  }
+  .product-thumb img{
+    width: 100% !important;
+    height: auto !important;
+    max-height: 260px;   /* 너무 커지면 제한 */
+    object-fit: contain !important;
+  }
+}
+   @media (max-width: 768px){
+  .product-card{
+    height: auto !important;
+    overflow: visible !important;
+  }
+} 
 </style>
 </head>
 <body>
