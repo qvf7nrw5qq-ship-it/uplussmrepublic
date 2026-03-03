@@ -845,6 +845,44 @@ a.kakao-btn{
   max-height: 85%;
   object-fit: contain;   /* ← 잘림 방지 핵심 */
 }
+  .product-media {
+  width: 100%;
+  height: 240px;           /* 모든 카드 이미지 영역 동일 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+.product-media {
+  width: 100%;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+    body {
+  background: #ffffff;
+}
+.product-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
 </style>
 </head>
 <body>
@@ -977,7 +1015,7 @@ a.kakao-btn{
 
 <div class="title">무료 상담 신청</div>
 
-<form>
+
 
   <a href="http://pf.kakao.com/_xlxfehX/chat" target="_blank" class="kakao-btn btn-common">
   카카오톡 상담하기
@@ -988,11 +1026,7 @@ a.kakao-btn{
 </button>
  
 
-  <input type="text" placeholder="이름" required>
-  <input type="tel" placeholder="연락처" required>
-  <button type="submit" class="submit">상담 요청하기</button>
-
-</form>
+  
   </div>
 </section>
 
@@ -1041,42 +1075,10 @@ function closeCallModal() {
     m.style.display = "none";  // 👈 닫힐 때 다시 숨김
   }, 200);
 }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  emailjs.init("1QMpBV6V3FpPfnQdR"); // Public Key
 
-  const form = document.querySelector("form");
-  if (!form) {
-    console.error("폼을 찾을 수 없습니다.");
-    return;
-  }
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const nameEl = document.querySelector('input[name="name"]');
-    const phoneEl = document.querySelector('input[name="phone"]');
-
-    const name = nameEl ? nameEl.value : "";
-    const phone = phoneEl ? phoneEl.value : "";
-
-    emailjs.send("smrepublic", "template_zkwy314", {
-      user_name: name,
-      user_phone: phone
-    })
-    .then(function () {
-      alert("상담 요청이 정상적으로 접수되었습니다 ✅");
-      form.reset();
-    })
-    .catch(function (error) {
-      alert("전송 실패 ❌ 다시 시도해주세요.");
-      console.log(error);
-    });
-  });
-});
+ 
 </script>
   <script>
   const slides = document.getElementById('slides');
