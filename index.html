@@ -920,6 +920,65 @@ footer, .section, .container {
   object-fit: cover;       /* 이미지 꽉 채우고 잘라냄 = 깔끔 */
   display: block;
 } 
+    /* =========================
+   모바일 레이아웃 응급 복구
+   ========================= */
+@media (max-width: 768px) {
+
+  /* 가로 튐 방지 */
+  html, body { overflow-x: hidden; }
+
+  /* ✅ 상품 카드(베스트 상품) : 높이 고정/스크롤바 제거 */
+  .product-card,
+  .product-card * {
+    max-width: 100%;
+  }
+
+  .product-card {
+    height: auto !important;         /* 고정 높이 제거 */
+    min-height: 0 !important;
+    overflow: hidden !important;      /* 카드 안 스크롤바 제거 */
+  }
+
+  /* ✅ 상품 이미지 : 카드 안에서 정상적으로 보이게 */
+  .product-card img {
+    width: 100% !important;
+    height: 220px !important;        /* 필요하면 180~260 조절 */
+    object-fit: cover !important;
+    display: block;
+  }
+
+  /* ✅ 카드 내부 여백/글씨 영역 정리 */
+  .product-card .badge,
+  .product-card .tag {
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ✅ 플로팅 카톡 버튼 : 너무 커서 가리는 문제 해결 */
+  .kakao-floating,
+  .floating,
+  .floating-buttons,
+  .contact-floating,
+  .fixed-buttons {
+    right: 14px !important;
+    bottom: 14px !important;
+    z-index: 99999 !important;
+  }
+
+  /* 플로팅 버튼 자체(노란 버튼)가 큰 경우 대비 */
+  .kakao-floating a,
+  .floating a,
+  .floating-buttons a,
+  .contact-floating a,
+  .fixed-buttons a {
+    padding: 12px 14px !important;
+    font-size: 14px !important;
+    border-radius: 999px !important;
+  }
+}
 </style>
 </head>
 <body>
