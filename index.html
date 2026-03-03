@@ -737,10 +737,24 @@ a.kakao-btn{
 
 .slide img{
   width:100%;
-  height:420px;
+  height:220px;   /* ← 반 정도 */
   object-fit:cover;
 }
+.slide{
+  position: relative;
+}
 
+.slide-cta{
+  position: absolute;
+  bottom: 40px;
+  left: 60px;
+  background: linear-gradient(90deg,#ff2f8b,#ff6ac1);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+}
 </style>
 </head>
 <body>
@@ -756,9 +770,7 @@ a.kakao-btn{
   </div>
 </section>
 
-<div class="hero-actions">
-  <a class="hero-cta" href="#consult">혜택 확인하기 →</a>
-</div>
+<a class="slide-cta" href="#consult">혜택 확인하기</a>>
 
 <section class="section">
   <div class="title">왜 선택해야 할까요?</div>
