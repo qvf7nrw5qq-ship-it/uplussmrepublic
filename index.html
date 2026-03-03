@@ -818,6 +818,33 @@ a.kakao-btn{
   font-weight:900;
   box-shadow: 0 10px 24px rgba(0,0,0,.25);
 }
+    .product-card {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.product-media {
+  width: 100%;
+  height: 220px;   /* ← 여기서 사진 높이 통일 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+}
+
+.product-media img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;   /* ← 잘림 방지 핵심 */
+}
 </style>
 </head>
 <body>
@@ -863,7 +890,11 @@ a.kakao-btn{
   <div class="products-title">베스트 상품</div>
 
   <div class="product-grid">
-   <article class="product-card">
+  <article class="product-card">
+  <div class="product-media">
+    <img src="유심카드.png" alt="유심 단독 변경">
+  </div>
+
   <div class="product-body">
     <div class="product-name">유심 단독 변경</div>
     <p class="product-desc">쓰던폰 그대로 통신사 변경해도 10만원 지급</p>
@@ -875,6 +906,9 @@ a.kakao-btn{
 </article>
 
 <article class="product-card">
+    <div class="product-media">
+    <img src="S26.png" alt="갤럭시 S26">
+  </div>
   <div class="product-body">
     <div class="badges">
       <span class="badge" style="background:#ff2d8d;color:#fff;">#[256GB→512GB 업그레이드]</span>
@@ -889,6 +923,7 @@ a.kakao-btn{
 </article>
 
 <article class="product-card">
+  <img src="i17.png" alt="아이폰17">
   <div class="product-body">
     <div class="product-name">아이폰 17 시리즈</div>
     <p class="product-desc"> 혜택가득! / 재고 문의</p>
@@ -900,6 +935,7 @@ a.kakao-btn{
 </article>
 
 <article class="product-card">
+  <img src="M2.png" alt="무너폰">
   <div class="product-body">
     <div class="product-name">U+무너폰2</div>
     <p class="product-desc">키즈폰</p>
@@ -911,6 +947,7 @@ a.kakao-btn{
 </article>
 
 <article class="product-card">
+  <img src="B4.png" alt="버디4">
   <div class="product-body">
     <div class="product-name">갤럭시 버디4</div>
     <p class="product-desc">시니어 추천</p>
@@ -921,6 +958,7 @@ a.kakao-btn{
   </div>
 </article> 
     <article class="product-card">
+      <img src="인터넷.png" alt="인터넷">
   <div class="product-body">
     <div class="product-name">인터넷 + TV 동시 가입시 </div>
    <p class="product-desc">
