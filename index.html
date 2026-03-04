@@ -1179,6 +1179,24 @@ height:50px;
 font-size:16px;
 border-radius:12px;
 }
+  /* ✅ 상품 카드 이미지 통일 */
+article.product-card > img{
+  width: 100% !important;
+  height: 220px !important;      /* 전부 같은 높이 */
+  object-fit: cover !important;  /* 꽉 채워서 깔끔 */
+  display: block !important;
+}
+
+/* 카드도 튀는거 방지 */
+article.product-card{
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* 모바일은 조금 낮게 */
+@media (max-width: 768px){
+  article.product-card > img{ height: 180px !important; }
+}  
 </style>
 </head>
 <body>
