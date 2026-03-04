@@ -1197,6 +1197,38 @@ article.product-card{
 @media (max-width: 768px){
   article.product-card > img{ height: 180px !important; }
 }  
+/* ✅ 카드 규격 통일 */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+@media (max-width:960px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:560px){ .product-grid{grid-template-columns:1fr;} }
+
+.product-card{
+  border-radius:18px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.product-card .thumb{
+  height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  padding:18px;
+}
+.product-card .thumb img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;
+  display:block;
+}
+
+.product-card .body{ padding:16px; }    
 </style>
 </head>
 <body>
@@ -1242,83 +1274,92 @@ article.product-card{
   <div class="products-title">베스트 상품</div>
 
   <div class="product-grid">
-  <article class="product-card">
-  <div class="product-media">
-    <img src="유심카드.png" alt="유심 단독 변경">
-  </div>
-
-  <div class="product-body">
-    <div class="product-name">유심 단독 변경</div>
-    <p class="product-desc">쓰던폰 그대로 통신사 변경해도 10만원 지급</p>
-    <div class="product-actions">
-      <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
-    </div>
-  </div>
-</article>
-
 <article class="product-card">
-    <div class="product-media">
+  <div class="thumb">
     <img src="S26.png" alt="갤럭시 S26">
   </div>
-  <div class="product-body">
-    <div class="badges">
-      <span class="badge" style="background:#ff2d8d;color:#fff;">#[256GB→512GB 업그레이드]</span>
-    </div>
-    <div class="product-name">갤럭시 S26 시리즈</div>
-    <p class="product-desc">사전예약</p>
-    <div class="product-actions">
+  <div class="body">
+    <div class="name">갤럭시 S26</div>
+    <div class="desc">사전예약 진행중</div>
+    <div class="point">256GB → 512GB 무료 업그레이드</div>
+    <div class="actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
     </div>
   </div>
 </article>
 
 <article class="product-card">
-  <img src="i17.png" alt="아이폰17">
-  <div class="product-body">
-    <div class="product-name">아이폰 17 시리즈</div>
-    <p class="product-desc"> 혜택가득! / 재고 문의</p>
-    <div class="product-actions">
+  <div class="thumb">
+    <img src="i17.png" alt="아이폰">
+  </div>
+  <div class="body">
+    <div class="name">아이폰</div>
+    <div class="desc">인기 모델 상담 가능</div>
+    <div class="point">최대 혜택 상담 진행</div>
+    <div class="actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
     </div>
   </div>
 </article>
 
 <article class="product-card">
-  <img src="M2.png" alt="무너폰">
-  <div class="product-body">
-    <div class="product-name">U+무너폰2</div>
-    <p class="product-desc">키즈폰</p>
-    <div class="product-actions">
+  <div class="thumb">
+    <img src="B4.png" alt="버디4">
+  </div>
+  <div class="body">
+    <div class="name">갤럭시 버디4</div>
+    <div class="desc">시니어 추천</div>
+    <div class="point">부모님 효도폰 인기</div>
+    <div class="actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
     </div>
   </div>
 </article>
 
 <article class="product-card">
-  <img src="B4.png" alt="버디4">
-  <div class="product-body">
-    <div class="product-name">갤럭시 버디4</div>
-    <p class="product-desc">시니어 추천</p>
-    <div class="product-actions">
+  <div class="thumb">
+    <img src="M2.png" alt="무너폰">
+  </div>
+  <div class="body">
+    <div class="name">무너폰</div>
+    <div class="desc">키즈폰 인기 모델</div>
+    <div class="point">초등학생 추천</div>
+    <div class="actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
     </div>
   </div>
-</article> 
-    <article class="product-card">
-      <img src="인터넷.png" alt="인터넷">
-  <div class="product-body">
-    <div class="product-name">인터넷 + TV 동시 가입시 </div>
-   <p class="product-desc">
-  지원금 <span class="highlight-pink">1,000,000원</span> 지급
-</p>
-    <div class="product-actions">
+</article>
+
+<article class="product-card">
+  <div class="thumb">
+    <img src="유심카드.png" alt="통신사 변경">
+  </div>
+  <div class="body">
+    <div class="name">통신사 변경</div>
+    <div class="desc">번호 그대로 이동</div>
+    <div class="point">최대 혜택 상담</div>
+    <div class="actions">
       <a href="#consult" class="btn btn-primary">상담 신청</a>
-      <button class="btn btn-ghost" type="button" onclick="openCallModal()">전화</button>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
+    </div>
+  </div>
+</article>
+
+<article class="product-card">
+  <div class="thumb">
+    <img src="인터넷.png" alt="인터넷">
+  </div>
+  <div class="body">
+    <div class="name">인터넷 + TV</div>
+    <div class="desc">동시 가입 가능</div>
+    <div class="point">최대 지원금 1,000,000원</div>
+    <div class="actions">
+      <a href="#consult" class="btn btn-primary">상담 신청</a>
+      <button class="btn btn-ghost" onclick="openCallModal()">전화</button>
     </div>
   </div>
 </article>
