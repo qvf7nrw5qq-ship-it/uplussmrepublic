@@ -1157,6 +1157,28 @@ section{ padding: 56px 0; }
     <!-- 기존 내용 그대로 -->
   </div>
 </section>
+    .consult-form{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:20px;
+max-width:420px;
+}
+
+.consult-form input,
+.consult-form select{
+height:48px;
+padding:0 12px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:14px;
+}
+
+.consult-form button{
+height:50px;
+font-size:16px;
+border-radius:12px;
+}
 </style>
 </head>
 <body>
@@ -1288,6 +1310,26 @@ section{ padding: 56px 0; }
   <div class="form-section">
 
 <div class="title">무료 상담 신청</div>
+  <form class="consult-form">
+
+<input type="text" placeholder="성함" required>
+
+<input type="tel" placeholder="연락처" required>
+
+<select>
+<option>문의 유형 선택</option>
+<option>아이폰</option>
+<option>갤럭시</option>
+<option>키즈폰</option>
+<option>인터넷 + TV</option>
+<option>요금 상담</option>
+</select>
+
+<button type="submit" class="btn btn-primary">
+무료 상담 신청하기
+</button>
+
+</form>  
 
 
 
