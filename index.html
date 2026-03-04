@@ -1011,6 +1011,152 @@ footer, .section, .container {
     overflow: visible !important;
   }
 } 
+   /* 카드 정렬 깔끔하게 */
+.product-grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+  justify-content:center;
+}
+
+/* 카드 크기 통일 */
+.product-card{
+  flex:1 1 280px;
+  max-width:320px;
+}
+
+/* 모바일 카드 정렬 */
+@media (max-width:768px){
+  .product-grid{
+    gap:14px;
+  }
+
+  .product-card{
+    flex:1 1 100%;
+    max-width:100%;
+  }
+}
+   .product-thumb{
+  aspect-ratio:1/1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+} 
+    .product-card{
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* 여기다가 내가 준 코드 넣기 */
+
+:root{
+  --max:1080px;
+  --pad:20px;
+}
+
+.container{
+  width:min(var(--max),calc(100% - var(--pad)*2));
+  margin:0 auto;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+@media (max-width:768px){
+  .product-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+    /* ===== 랜딩페이지 느낌 + 카드 스타일 통일 ===== */
+:root{
+  --max: 1100px;
+  --pad: 20px;
+  --r: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.container{
+  width: min(var(--max), calc(100% - var(--pad)*2));
+  margin: 0 auto;
+}
+
+section{ padding: 56px 0; }
+@media (max-width:768px){ section{ padding: 40px 0; } }
+
+/* 섹션 제목/설명 랜딩처럼 정렬 */
+.section-title{
+  text-align:center;
+  margin-bottom: 18px;
+}
+.section-sub{
+  text-align:center;
+  opacity:.8;
+  margin-bottom: 28px;
+}
+
+/* ===== 베스트 상품: 그리드 규칙 하나로 고정 ===== */
+.product-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+@media (max-width:960px){
+  .product-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width:560px){
+  .product-grid{ grid-template-columns: 1fr; }
+}
+
+/* 카드 통일 */
+.product-card{
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  transform: translateZ(0);
+}
+.product-card:hover{
+  transform: translateY(-2px);
+}
+
+/* 이미지 비율 통일(애플스토어 느낌 핵심) */
+.product-thumb{
+  aspect-ratio: 1 / 1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+}
+.product-thumb img{
+  width:100% !important;
+  height:100% !important;
+  object-fit: cover !important;
+}
+
+/* consult 앵커 이동 시 상단 가림 방지 */
+#consult{ scroll-margin-top: 90px; }
+
+/* 상담 영역: 모바일에서 튀어나오지 않게 */
+#consult, .consult, .consult-wrap{
+  max-width: min(720px, 100%);
+  margin: 0 auto;
+}
+#consult form{
+  display:grid;
+  gap: 12px;
+}
+#consult input, #consult select, #consult textarea{
+  width:100%;
+  box-sizing:border-box;
+  border-radius: 12px;
+}
+    <section>
+  <div class="container">
+    <!-- 기존 내용 그대로 -->
+  </div>
+</section>
 </style>
 </head>
 <body>
